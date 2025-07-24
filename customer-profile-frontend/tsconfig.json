@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",  // 适配 Vite 打包器
+    "types": ["vite/client", "@vitejs/plugin-vue"],
+    "allowSyntheticDefaultImports": true,  // 允许默认导入
+    "esModuleInterop": true  // 兼容 CommonJS 模块
+  }
+}
