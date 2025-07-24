@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
@@ -23,7 +24,7 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         // 使用BCrypt进行密码加密，注意我们数据库里的密码是明文，这里为了演示方便先不加密
         // 真实项目中，注册时密码需要加密存储
-        return new BCryptPasswordEncoder();
+        return  NoOpPasswordEncoder.getInstance();
     }
 
     @Bean

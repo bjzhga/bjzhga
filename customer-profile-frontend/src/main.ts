@@ -1,12 +1,19 @@
+// src/main.ts
+
 import { createApp } from 'vue'
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/reset.css';
-import './style.css'
+
+// 1. 引入 Element Plus 组件库
+import ElementPlus from 'element-plus'
+// 2. 引入 Element Plus 的样式文件 (这很可能是你缺失的一行！)
+import 'element-plus/dist/index.css'
+
 import App from './App.vue'
-import router from './router'; // 引入路由
+import router from './router'
 
-const app = createApp(App);
+const app = createApp(App)
 
-app.use(Antd);
-app.use(router); // 使用路由
-app.mount('#app');
+// 3. 在应用中使用 Element Plus 和路由
+app.use(router)
+app.use(ElementPlus)
+
+app.mount('#app')
